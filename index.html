@@ -36,11 +36,10 @@
     overflow-x: hidden;
   }
 
-  /* ========== SCREENS ========== */
   .screen { display: none; min-height: 100vh; }
   .screen.active { display: flex; flex-direction: column; }
 
-  /* ========== SETUP SCREEN ========== */
+  /* SETUP */
   #setup-screen {
     align-items: center;
     justify-content: center;
@@ -57,639 +56,191 @@
     border: 1px solid rgba(79,195,247,0.15);
   }
 
-  .app-logo {
-    text-align: center;
-    margin-bottom: 2rem;
-  }
+  .app-logo { text-align: center; margin-bottom: 2rem; }
+  .app-logo .icon { font-size: 3.5rem; display: block; margin-bottom: 0.5rem; }
+  .app-logo h1 { font-family: 'Nunito', sans-serif; font-size: 1.8rem; font-weight: 800; color: var(--accent); }
+  .app-logo p { font-size: 0.85rem; color: var(--text2); margin-top: 0.25rem; }
 
-  .app-logo .icon {
-    font-size: 3.5rem;
-    display: block;
-    margin-bottom: 0.5rem;
-  }
-
-  .app-logo h1 {
-    font-family: 'Nunito', sans-serif;
-    font-size: 1.8rem;
-    font-weight: 800;
-    color: var(--accent);
-    letter-spacing: -0.5px;
-  }
-
-  .app-logo p {
-    font-size: 0.85rem;
-    color: var(--text2);
-    margin-top: 0.25rem;
-  }
-
-  .form-group {
-    margin-bottom: 1.5rem;
-  }
-
-  .form-group label {
-    display: block;
-    font-size: 0.85rem;
-    font-weight: 500;
-    color: var(--text2);
-    margin-bottom: 0.5rem;
-    letter-spacing: 0.3px;
-  }
-
+  .form-group { margin-bottom: 1.5rem; }
+  .form-group label { display: block; font-size: 0.85rem; font-weight: 500; color: var(--text2); margin-bottom: 0.5rem; }
   .form-group input {
-    width: 100%;
-    background: var(--surface2);
-    border: 1.5px solid rgba(79,195,247,0.2);
-    border-radius: var(--radius-sm);
-    padding: 0.85rem 1rem;
-    color: var(--text);
-    font-size: 0.95rem;
-    font-family: 'Noto Sans JP', sans-serif;
-    outline: none;
-    transition: border-color 0.2s;
+    width: 100%; background: var(--surface2); border: 1.5px solid rgba(79,195,247,0.2);
+    border-radius: var(--radius-sm); padding: 0.85rem 1rem; color: var(--text);
+    font-size: 0.95rem; font-family: 'Noto Sans JP', sans-serif; outline: none; transition: border-color 0.2s;
   }
-
-  .form-group input:focus {
-    border-color: var(--accent);
-  }
-
-  .form-group .hint {
-    font-size: 0.78rem;
-    color: var(--text2);
-    margin-top: 0.4rem;
-    line-height: 1.5;
-  }
+  .form-group input:focus { border-color: var(--accent); }
+  .form-group .hint { font-size: 0.78rem; color: var(--text2); margin-top: 0.4rem; line-height: 1.5; }
 
   .btn-primary {
-    width: 100%;
-    background: var(--accent);
-    color: #0f1923;
-    border: none;
-    border-radius: var(--radius-sm);
-    padding: 1rem;
-    font-size: 1rem;
-    font-weight: 700;
-    font-family: 'Nunito', sans-serif;
-    cursor: pointer;
-    transition: all 0.2s;
-    letter-spacing: 0.3px;
+    width: 100%; background: var(--accent); color: #0f1923; border: none;
+    border-radius: var(--radius-sm); padding: 1rem; font-size: 1rem; font-weight: 700;
+    font-family: 'Nunito', sans-serif; cursor: pointer; transition: all 0.2s;
   }
-
   .btn-primary:hover { background: var(--accent2); transform: translateY(-1px); }
-  .btn-primary:active { transform: translateY(0); }
+  .btn-primary:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
 
-  /* ========== LIST SCREEN ========== */
-  #list-screen {
-    background: var(--bg);
+  .install-hint {
+    background: rgba(79,195,247,0.08); border: 1px solid rgba(79,195,247,0.2);
+    border-radius: var(--radius-sm); padding: 0.75rem 1rem; font-size: 0.8rem;
+    color: var(--text2); line-height: 1.6; margin-top: 1.25rem; text-align: center;
   }
+  .install-hint strong { color: var(--accent); }
+
+  /* LIST */
+  #list-screen { background: var(--bg); }
 
   .top-bar {
-    background: var(--surface);
-    padding: 1rem 1.25rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    border-bottom: 1px solid rgba(79,195,247,0.1);
-    position: sticky;
-    top: 0;
-    z-index: 10;
+    background: var(--surface); padding: 1rem 1.25rem;
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1px solid rgba(79,195,247,0.1); position: sticky; top: 0; z-index: 10;
   }
-
-  .top-bar h2 {
-    font-family: 'Nunito', sans-serif;
-    font-size: 1.2rem;
-    font-weight: 800;
-    color: var(--accent);
-  }
+  .top-bar h2 { font-family: 'Nunito', sans-serif; font-size: 1.2rem; font-weight: 800; color: var(--accent); }
 
   .btn-icon {
-    background: var(--surface2);
-    border: 1px solid rgba(79,195,247,0.15);
-    border-radius: 10px;
-    color: var(--text2);
-    width: 38px;
-    height: 38px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    font-size: 1.1rem;
-    transition: all 0.2s;
+    background: var(--surface2); border: 1px solid rgba(79,195,247,0.15);
+    border-radius: 10px; color: var(--text2); width: 38px; height: 38px;
+    display: flex; align-items: center; justify-content: center;
+    cursor: pointer; font-size: 1.1rem; transition: all 0.2s;
   }
-
   .btn-icon:hover { color: var(--accent); border-color: var(--accent); }
 
-  .video-list {
-    padding: 1rem;
-    flex: 1;
-  }
+  .video-list { padding: 1rem; flex: 1; }
 
-  .empty-state {
-    text-align: center;
-    padding: 4rem 2rem;
-    color: var(--text2);
+  .loading-state { text-align: center; padding: 3rem 2rem; color: var(--text2); }
+  .loading-spinner {
+    width: 36px; height: 36px; border: 3px solid rgba(79,195,247,0.2);
+    border-top-color: var(--accent); border-radius: 50%;
+    animation: spin 0.8s linear infinite; margin: 0 auto 1rem;
   }
+  @keyframes spin { to { transform: rotate(360deg); } }
 
+  .empty-state { text-align: center; padding: 4rem 2rem; color: var(--text2); }
   .empty-state .empty-icon { font-size: 3rem; margin-bottom: 1rem; display: block; }
   .empty-state p { line-height: 1.7; font-size: 0.95rem; }
 
-  .video-card {
-    background: var(--surface);
-    border-radius: var(--radius);
-    padding: 1rem 1.25rem;
-    margin-bottom: 0.75rem;
-    border: 1px solid rgba(79,195,247,0.1);
-    cursor: pointer;
-    transition: all 0.2s;
-    display: flex;
-    align-items: center;
-    gap: 1rem;
+  .error-state {
+    background: rgba(239,83,80,0.1); border: 1px solid rgba(239,83,80,0.25);
+    border-radius: var(--radius); padding: 1.25rem; margin: 1rem;
+    text-align: center; color: #ef9a9a; font-size: 0.9rem; line-height: 1.7;
   }
 
-  .video-card:hover, .video-card:active {
-    border-color: rgba(79,195,247,0.4);
-    background: var(--surface2);
-    transform: translateY(-1px);
+  .video-card {
+    background: var(--surface); border-radius: var(--radius); padding: 1rem 1.25rem;
+    margin-bottom: 0.75rem; border: 1px solid rgba(79,195,247,0.1);
+    cursor: pointer; transition: all 0.2s; display: flex; align-items: center; gap: 1rem;
   }
+  .video-card:hover, .video-card:active { border-color: rgba(79,195,247,0.4); background: var(--surface2); transform: translateY(-1px); }
 
   .video-thumb {
-    width: 52px;
-    height: 52px;
-    background: var(--surface2);
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.6rem;
-    flex-shrink: 0;
-    border: 1px solid rgba(79,195,247,0.15);
+    width: 52px; height: 52px; background: var(--surface2); border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.6rem; flex-shrink: 0; border: 1px solid rgba(79,195,247,0.15);
   }
 
   .video-info { flex: 1; min-width: 0; }
+  .video-title { font-weight: 700; font-size: 0.95rem; color: var(--text); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; margin-bottom: 0.25rem; }
+  .video-meta { font-size: 0.78rem; color: var(--text2); display: flex; align-items: center; gap: 0.5rem; }
+  .bookmark-badge { background: rgba(255,213,79,0.15); color: var(--gold); border-radius: 6px; padding: 2px 6px; font-size: 0.72rem; font-weight: 600; }
+  .play-arrow { color: var(--accent); font-size: 1.2rem; flex-shrink: 0; }
 
-  .video-title {
-    font-weight: 700;
-    font-size: 0.95rem;
-    color: var(--text);
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    margin-bottom: 0.25rem;
+  .refresh-bar {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0.6rem 1rem; background: rgba(79,195,247,0.05);
+    border-bottom: 1px solid rgba(79,195,247,0.08); font-size: 0.78rem; color: var(--text2);
   }
+  .btn-refresh {
+    background: none; border: 1px solid rgba(79,195,247,0.2); border-radius: 8px;
+    color: var(--accent); padding: 0.3rem 0.75rem; font-size: 0.78rem; cursor: pointer; transition: all 0.2s;
+  }
+  .btn-refresh:hover { background: rgba(79,195,247,0.1); }
 
-  .video-meta {
-    font-size: 0.78rem;
-    color: var(--text2);
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-  }
-
-  .bookmark-badge {
-    background: rgba(255,213,79,0.15);
-    color: var(--gold);
-    border-radius: 6px;
-    padding: 2px 6px;
-    font-size: 0.72rem;
-    font-weight: 600;
-  }
-
-  .play-arrow {
-    color: var(--accent);
-    font-size: 1.2rem;
-    flex-shrink: 0;
-  }
-
-  /* ========== PLAYER SCREEN ========== */
-  #player-screen {
-    background: #000;
-  }
+  /* PLAYER */
+  #player-screen { background: #000; }
 
   .player-top {
-    background: rgba(15,25,35,0.95);
-    padding: 0.75rem 1rem;
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    position: sticky;
-    top: 0;
-    z-index: 10;
-    backdrop-filter: blur(10px);
+    background: rgba(15,25,35,0.95); padding: 0.75rem 1rem;
+    display: flex; align-items: center; gap: 0.75rem;
+    position: sticky; top: 0; z-index: 10; backdrop-filter: blur(10px);
   }
 
-  .btn-back {
-    background: none;
-    border: none;
-    color: var(--accent);
-    font-size: 1.5rem;
-    cursor: pointer;
-    padding: 0.25rem;
-    line-height: 1;
-  }
+  .btn-back { background: none; border: none; color: var(--accent); font-size: 1.5rem; cursor: pointer; padding: 0.25rem; line-height: 1; }
 
-  .player-title {
-    font-family: 'Nunito', sans-serif;
-    font-weight: 700;
-    font-size: 1rem;
-    color: var(--text);
-    flex: 1;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
+  .player-title { font-family: 'Nunito', sans-serif; font-weight: 700; font-size: 1rem; color: var(--text); flex: 1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 
-  .video-wrapper {
-    width: 100%;
-    background: #000;
-    position: relative;
-  }
+  .video-wrapper { width: 100%; background: #000; }
+  .video-wrapper iframe { width: 100%; aspect-ratio: 16/9; display: block; border: none; }
 
-  .video-wrapper iframe {
-    width: 100%;
-    aspect-ratio: 16/9;
-    display: block;
-    border: none;
-  }
-
-  .player-body {
-    background: var(--bg);
-    flex: 1;
-    padding: 1rem;
-  }
+  .player-body { background: var(--bg); flex: 1; padding: 1rem; }
 
   .bookmark-section {
-    background: var(--surface);
-    border-radius: var(--radius);
-    padding: 1.25rem;
-    margin-bottom: 1rem;
-    border: 1px solid rgba(255,213,79,0.1);
+    background: var(--surface); border-radius: var(--radius); padding: 1.25rem;
+    margin-bottom: 1rem; border: 1px solid rgba(255,213,79,0.1);
   }
-
-  .section-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 1rem;
-  }
-
-  .section-title {
-    font-family: 'Nunito', sans-serif;
-    font-weight: 800;
-    font-size: 0.95rem;
-    color: var(--gold);
-    display: flex;
-    align-items: center;
-    gap: 0.4rem;
-  }
+  .section-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem; }
+  .section-title { font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 0.95rem; color: var(--gold); display: flex; align-items: center; gap: 0.4rem; }
 
   .btn-add-bookmark {
-    background: rgba(255,213,79,0.12);
-    border: 1px solid rgba(255,213,79,0.3);
-    border-radius: 8px;
-    color: var(--gold);
-    padding: 0.4rem 0.75rem;
-    font-size: 0.8rem;
-    font-weight: 700;
-    cursor: pointer;
-    transition: all 0.2s;
-    font-family: 'Nunito', sans-serif;
+    background: rgba(255,213,79,0.12); border: 1px solid rgba(255,213,79,0.3);
+    border-radius: 8px; color: var(--gold); padding: 0.4rem 0.75rem;
+    font-size: 0.8rem; font-weight: 700; cursor: pointer; transition: all 0.2s; font-family: 'Nunito', sans-serif;
   }
-
   .btn-add-bookmark:hover { background: rgba(255,213,79,0.2); }
 
   .bookmark-list { display: flex; flex-direction: column; gap: 0.5rem; }
-
-  .bookmark-empty {
-    text-align: center;
-    color: var(--text2);
-    font-size: 0.85rem;
-    padding: 0.5rem 0;
-  }
+  .bookmark-empty { text-align: center; color: var(--text2); font-size: 0.85rem; padding: 0.5rem 0; }
 
   .bookmark-item {
-    background: var(--surface2);
-    border-radius: 10px;
-    padding: 0.65rem 0.9rem;
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    border: 1px solid rgba(255,213,79,0.1);
+    background: var(--surface2); border-radius: 10px; padding: 0.65rem 0.9rem;
+    display: flex; align-items: center; gap: 0.75rem; border: 1px solid rgba(255,213,79,0.1);
   }
-
-  .bookmark-time {
-    background: rgba(255,213,79,0.15);
-    color: var(--gold);
-    border-radius: 6px;
-    padding: 3px 8px;
-    font-size: 0.8rem;
-    font-weight: 700;
-    font-family: 'Nunito', sans-serif;
-    flex-shrink: 0;
-  }
-
-  .bookmark-label {
-    flex: 1;
-    font-size: 0.88rem;
-    color: var(--text);
-    min-width: 0;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-
-  .btn-del-bookmark {
-    background: none;
-    border: none;
-    color: var(--text2);
-    cursor: pointer;
-    font-size: 1rem;
-    padding: 2px;
-    transition: color 0.2s;
-    flex-shrink: 0;
-  }
-
+  .bookmark-time { background: rgba(255,213,79,0.15); color: var(--gold); border-radius: 6px; padding: 3px 8px; font-size: 0.8rem; font-weight: 700; font-family: 'Nunito', sans-serif; flex-shrink: 0; }
+  .bookmark-label { flex: 1; font-size: 0.88rem; color: var(--text); min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .btn-del-bookmark { background: none; border: none; color: var(--text2); cursor: pointer; font-size: 1rem; padding: 2px; transition: color 0.2s; flex-shrink: 0; }
   .btn-del-bookmark:hover { color: var(--danger); }
 
-  /* ========== SETTINGS SCREEN ========== */
-  #settings-screen {
-    background: var(--bg);
-  }
-
-  .settings-body {
-    padding: 1.25rem;
-    flex: 1;
-  }
+  /* SETTINGS */
+  #settings-screen { background: var(--bg); }
+  .settings-body { padding: 1.25rem; flex: 1; }
 
   .settings-section {
-    background: var(--surface);
-    border-radius: var(--radius);
-    overflow: hidden;
-    margin-bottom: 1.5rem;
-    border: 1px solid rgba(79,195,247,0.08);
+    background: var(--surface); border-radius: var(--radius); overflow: hidden;
+    margin-bottom: 1.5rem; border: 1px solid rgba(79,195,247,0.08);
   }
+  .settings-section-title { font-size: 0.75rem; font-weight: 700; color: var(--text2); text-transform: uppercase; letter-spacing: 0.8px; padding: 0.75rem 1.25rem 0.5rem; }
 
-  .settings-section-title {
-    font-size: 0.75rem;
-    font-weight: 700;
-    color: var(--text2);
-    text-transform: uppercase;
-    letter-spacing: 0.8px;
-    padding: 0.75rem 1.25rem 0.5rem;
-  }
-
-  .settings-item {
-    padding: 1rem 1.25rem;
-    border-top: 1px solid rgba(79,195,247,0.06);
-    display: flex;
-    align-items: flex-start;
-    gap: 0.75rem;
-  }
-
-  .settings-item-icon {
-    font-size: 1.3rem;
-    flex-shrink: 0;
-    margin-top: 1px;
-  }
-
-  .settings-item-content { flex: 1; }
-
-  .settings-item-label {
-    font-weight: 600;
-    font-size: 0.95rem;
-    color: var(--text);
-    margin-bottom: 0.5rem;
-  }
-
+  .settings-item { padding: 1rem 1.25rem; border-top: 1px solid rgba(79,195,247,0.06); }
+  .settings-item-label { font-weight: 600; font-size: 0.95rem; color: var(--text); margin-bottom: 0.5rem; }
   .settings-item input {
-    width: 100%;
-    background: var(--surface2);
-    border: 1.5px solid rgba(79,195,247,0.2);
-    border-radius: 8px;
-    padding: 0.65rem 0.9rem;
-    color: var(--text);
-    font-size: 0.88rem;
-    font-family: 'Noto Sans JP', sans-serif;
-    outline: none;
-    transition: border-color 0.2s;
+    width: 100%; background: var(--surface2); border: 1.5px solid rgba(79,195,247,0.2);
+    border-radius: 8px; padding: 0.65rem 0.9rem; color: var(--text);
+    font-size: 0.88rem; font-family: 'Noto Sans JP', sans-serif; outline: none; transition: border-color 0.2s;
   }
-
   .settings-item input:focus { border-color: var(--accent); }
+  .settings-hint { font-size: 0.75rem; color: var(--text2); margin-top: 0.4rem; line-height: 1.5; }
 
-  .settings-hint {
-    font-size: 0.75rem;
-    color: var(--text2);
-    margin-top: 0.4rem;
-    line-height: 1.5;
-  }
-
-  .btn-save {
-    background: var(--accent);
-    color: #0f1923;
-    border: none;
-    border-radius: var(--radius-sm);
-    padding: 0.65rem 1.25rem;
-    font-size: 0.9rem;
-    font-weight: 700;
-    font-family: 'Nunito', sans-serif;
-    cursor: pointer;
-    transition: all 0.2s;
-    margin-top: 0.75rem;
-  }
-
-  .btn-save:hover { background: var(--accent2); }
-
-  .video-edit-item {
-    padding: 1rem 1.25rem;
-    border-top: 1px solid rgba(79,195,247,0.06);
-  }
-
-  .video-edit-row {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    margin-bottom: 0.5rem;
-  }
-
-  .video-edit-row input {
-    flex: 1;
-    background: var(--surface2);
-    border: 1.5px solid rgba(79,195,247,0.2);
-    border-radius: 8px;
-    padding: 0.6rem 0.85rem;
-    color: var(--text);
-    font-size: 0.88rem;
-    font-family: 'Noto Sans JP', sans-serif;
-    outline: none;
-    transition: border-color 0.2s;
-  }
-
-  .video-edit-row input:focus { border-color: var(--accent); }
-
-  .video-edit-row .btn-del-video {
-    background: rgba(239,83,80,0.12);
-    border: 1px solid rgba(239,83,80,0.25);
-    border-radius: 8px;
-    color: var(--danger);
-    width: 36px;
-    height: 36px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    font-size: 1rem;
-    flex-shrink: 0;
-    transition: all 0.2s;
-  }
-
-  .video-edit-row .btn-del-video:hover { background: rgba(239,83,80,0.22); }
-
-  .video-num {
-    font-size: 0.75rem;
-    color: var(--text2);
-    margin-bottom: 0.35rem;
-    font-weight: 500;
-  }
-
-  .btn-add-video {
-    width: 100%;
-    background: rgba(79,195,247,0.08);
-    border: 1.5px dashed rgba(79,195,247,0.3);
-    border-radius: var(--radius-sm);
-    color: var(--accent);
-    padding: 0.75rem;
-    font-size: 0.9rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.2s;
-    font-family: 'Nunito', sans-serif;
-    margin-top: 0.5rem;
-  }
-
-  .btn-add-video:hover { background: rgba(79,195,247,0.14); }
-
-  /* ========== MODAL ========== */
+  /* MODAL */
   .modal-overlay {
-    display: none;
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.7);
-    z-index: 100;
-    align-items: center;
-    justify-content: center;
-    padding: 1.5rem;
-    backdrop-filter: blur(4px);
+    display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.7);
+    z-index: 100; align-items: center; justify-content: center; padding: 1.5rem; backdrop-filter: blur(4px);
   }
-
   .modal-overlay.active { display: flex; }
-
-  .modal {
-    background: var(--surface);
-    border-radius: 20px;
-    padding: 1.75rem;
-    width: 100%;
-    max-width: 360px;
-    border: 1px solid rgba(79,195,247,0.15);
-  }
-
-  .modal h3 {
-    font-family: 'Nunito', sans-serif;
-    font-size: 1.1rem;
-    font-weight: 800;
-    color: var(--text);
-    margin-bottom: 1rem;
-  }
-
-  .modal input {
-    width: 100%;
-    background: var(--surface2);
-    border: 1.5px solid rgba(79,195,247,0.2);
-    border-radius: 8px;
-    padding: 0.75rem 1rem;
-    color: var(--text);
-    font-size: 0.95rem;
-    font-family: 'Noto Sans JP', sans-serif;
-    outline: none;
-    transition: border-color 0.2s;
-    margin-bottom: 1rem;
-  }
-
+  .modal { background: var(--surface); border-radius: 20px; padding: 1.75rem; width: 100%; max-width: 360px; border: 1px solid rgba(79,195,247,0.15); }
+  .modal h3 { font-family: 'Nunito', sans-serif; font-size: 1.1rem; font-weight: 800; color: var(--text); margin-bottom: 1rem; }
+  .modal input { width: 100%; background: var(--surface2); border: 1.5px solid rgba(79,195,247,0.2); border-radius: 8px; padding: 0.75rem 1rem; color: var(--text); font-size: 0.95rem; font-family: 'Noto Sans JP', sans-serif; outline: none; transition: border-color 0.2s; margin-bottom: 1rem; }
   .modal input:focus { border-color: var(--accent); }
-
-  .modal-buttons {
-    display: flex;
-    gap: 0.75rem;
-  }
-
-  .btn-cancel {
-    flex: 1;
-    background: var(--surface2);
-    border: 1px solid rgba(79,195,247,0.15);
-    border-radius: 8px;
-    color: var(--text2);
-    padding: 0.75rem;
-    font-size: 0.9rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.2s;
-    font-family: 'Nunito', sans-serif;
-  }
-
-  .btn-cancel:hover { color: var(--text); }
-
-  .btn-confirm {
-    flex: 1;
-    background: var(--gold);
-    border: none;
-    border-radius: 8px;
-    color: #1a1000;
-    padding: 0.75rem;
-    font-size: 0.9rem;
-    font-weight: 700;
-    cursor: pointer;
-    transition: all 0.2s;
-    font-family: 'Nunito', sans-serif;
-  }
-
+  .modal-buttons { display: flex; gap: 0.75rem; }
+  .btn-cancel { flex: 1; background: var(--surface2); border: 1px solid rgba(79,195,247,0.15); border-radius: 8px; color: var(--text2); padding: 0.75rem; font-size: 0.9rem; font-weight: 600; cursor: pointer; font-family: 'Nunito', sans-serif; }
+  .btn-confirm { flex: 1; background: var(--gold); border: none; border-radius: 8px; color: #1a1000; padding: 0.75rem; font-size: 0.9rem; font-weight: 700; cursor: pointer; font-family: 'Nunito', sans-serif; }
   .btn-confirm:hover { background: #ffe082; }
 
-  /* ========== TOAST ========== */
-  .toast {
-    position: fixed;
-    bottom: 2rem;
-    left: 50%;
-    transform: translateX(-50%) translateY(80px);
-    background: var(--surface2);
-    border: 1px solid rgba(79,195,247,0.2);
-    border-radius: 12px;
-    padding: 0.7rem 1.25rem;
-    font-size: 0.88rem;
-    font-weight: 500;
-    color: var(--text);
-    z-index: 200;
-    transition: transform 0.3s ease;
-    white-space: nowrap;
-  }
-
+  /* TOAST */
+  .toast { position: fixed; bottom: 2rem; left: 50%; transform: translateX(-50%) translateY(80px); background: var(--surface2); border: 1px solid rgba(79,195,247,0.2); border-radius: 12px; padding: 0.7rem 1.25rem; font-size: 0.88rem; font-weight: 500; color: var(--text); z-index: 200; transition: transform 0.3s ease; white-space: nowrap; }
   .toast.show { transform: translateX(-50%) translateY(0); }
-
-  /* ========== PWA install hint ========== */
-  .install-hint {
-    background: rgba(79,195,247,0.08);
-    border: 1px solid rgba(79,195,247,0.2);
-    border-radius: var(--radius-sm);
-    padding: 0.75rem 1rem;
-    font-size: 0.8rem;
-    color: var(--text2);
-    line-height: 1.6;
-    margin-top: 1.25rem;
-    text-align: center;
-  }
-
-  .install-hint strong { color: var(--accent); }
 </style>
 </head>
 <body>
 
-<!-- ===== SETUP SCREEN ===== -->
+<!-- SETUP SCREEN -->
 <div id="setup-screen" class="screen">
   <div class="setup-card">
     <div class="app-logo">
@@ -697,15 +248,17 @@
       <h1>英単語動画</h1>
       <p>はじめに設定をしよう</p>
     </div>
-
     <div class="form-group">
-      <label>GoogleドライブのフォルダID</label>
-      <input type="text" id="setup-folder-id" placeholder="例：1ABCxyz123...">
+      <label>Google Drive APIキー</label>
+      <input type="text" id="setup-api-key" placeholder="AIzaSy...">
+      <p class="hint">Google Cloud Consoleで取得したAPIキーを入力してください。</p>
+    </div>
+    <div class="form-group">
+      <label>動画フォルダのID</label>
+      <input type="text" id="setup-folder-id" placeholder="1ABCxyz123...">
       <p class="hint">GoogleドライブのフォルダURLの末尾の文字列です。<br>例：drive.google.com/drive/folders/<strong>ここの部分</strong></p>
     </div>
-
     <button class="btn-primary" onclick="saveSetup()">🚀 アプリを始める</button>
-
     <div class="install-hint">
       📱 <strong>ホーム画面に追加</strong>すると<br>アプリとして使えます<br>
       Safari → 共有ボタン →「ホーム画面に追加」
@@ -713,35 +266,29 @@
   </div>
 </div>
 
-<!-- ===== LIST SCREEN ===== -->
+<!-- LIST SCREEN -->
 <div id="list-screen" class="screen">
   <div class="top-bar">
     <h2>🎬 英単語動画</h2>
-    <div style="display:flex;gap:0.5rem;">
-      <button class="btn-icon" onclick="showScreen('settings-screen')" title="設定">⚙️</button>
-    </div>
+    <button class="btn-icon" onclick="showScreen('settings-screen')" title="設定">⚙️</button>
   </div>
-
-  <div class="video-list" id="video-list-container">
-    <div class="empty-state">
-      <span class="empty-icon">🎥</span>
-      <p>動画がまだ登録されていません。<br>⚙️ 設定から動画を追加してください。</p>
-    </div>
+  <div class="refresh-bar">
+    <span id="last-updated">動画を読み込み中...</span>
+    <button class="btn-refresh" onclick="loadVideos()">🔄 更新</button>
   </div>
+  <div class="video-list" id="video-list-container"></div>
 </div>
 
-<!-- ===== PLAYER SCREEN ===== -->
+<!-- PLAYER SCREEN -->
 <div id="player-screen" class="screen">
   <div class="player-top">
     <button class="btn-back" onclick="backToList()">‹</button>
     <span class="player-title" id="player-title">動画タイトル</span>
-    <button class="btn-add-bookmark" onclick="openBookmarkModal()" style="margin-left:auto;">＋ しおり</button>
+    <button class="btn-add-bookmark" onclick="openBookmarkModal()">＋ しおり</button>
   </div>
-
   <div class="video-wrapper">
     <iframe id="video-iframe" allowfullscreen allow="autoplay; fullscreen"></iframe>
   </div>
-
   <div class="player-body">
     <div class="bookmark-section">
       <div class="section-header">
@@ -752,40 +299,32 @@
   </div>
 </div>
 
-<!-- ===== SETTINGS SCREEN ===== -->
+<!-- SETTINGS SCREEN -->
 <div id="settings-screen" class="screen">
   <div class="top-bar">
     <button class="btn-back" onclick="showScreen('list-screen')">‹</button>
     <h2>⚙️ 設定</h2>
     <div style="width:38px;"></div>
   </div>
-
   <div class="settings-body">
-    <div class="settings-section">
-      <div class="settings-section-title">動画の管理</div>
-      <div id="video-edit-list"></div>
-      <div style="padding: 0.75rem 1.25rem;">
-        <button class="btn-add-video" onclick="addVideoField()">＋ 動画を追加</button>
-      </div>
-    </div>
-
     <div class="settings-section">
       <div class="settings-section-title">Google Drive 設定</div>
       <div class="settings-item">
-        <span class="settings-item-icon">📁</span>
-        <div class="settings-item-content">
-          <div class="settings-item-label">フォルダID</div>
-          <input type="text" id="folder-id-input" placeholder="GoogleドライブのフォルダID">
-          <p class="settings-hint">drive.google.com/drive/folders/<strong>このID部分</strong></p>
-        </div>
+        <div class="settings-item-label">APIキー</div>
+        <input type="text" id="settings-api-key" placeholder="AIzaSy...">
+        <p class="settings-hint">Google Cloud ConsoleのAPIキーです。</p>
+      </div>
+      <div class="settings-item">
+        <div class="settings-item-label">フォルダID</div>
+        <input type="text" id="settings-folder-id" placeholder="GoogleドライブのフォルダID">
+        <p class="settings-hint">drive.google.com/drive/folders/<strong>このID部分</strong></p>
       </div>
     </div>
-
     <button class="btn-primary" onclick="saveSettings()">💾 保存する</button>
   </div>
 </div>
 
-<!-- ===== BOOKMARK MODAL ===== -->
+<!-- BOOKMARK MODAL -->
 <div class="modal-overlay" id="bookmark-modal">
   <div class="modal">
     <h3>🔖 しおりを追加</h3>
@@ -797,40 +336,51 @@
   </div>
 </div>
 
-<!-- ===== TOAST ===== -->
 <div class="toast" id="toast"></div>
 
 <script>
+// ===== CONFIG =====
+// ここにフォルダIDとAPIキーを直接書くこともできます（設定画面で入力した値が優先されます）
+const DEFAULT_FOLDER_ID = '';
+const DEFAULT_API_KEY = '';
+
 // ===== STATE =====
 let state = {
-  videos: [],       // [{id, title, driveFileId}]
-  bookmarks: {},    // {videoId: [{id, label, addedAt}]}
-  folderId: '',
+  apiKey: DEFAULT_API_KEY,
+  folderId: DEFAULT_FOLDER_ID,
+  bookmarks: {},   // {fileId: [{id, label, addedAt}]}
+  cachedVideos: [],
+  lastUpdated: null,
 };
-
 let currentVideoId = null;
 
 // ===== INIT =====
 function init() {
+  // 古いバージョンのキャッシュデータを削除
+  localStorage.removeItem('eitan_state');
   loadState();
-  if (!state.folderId && state.videos.length === 0) {
+  const hasConfig = state.apiKey && state.folderId;
+  if (!hasConfig) {
     showScreen('setup-screen');
   } else {
     showScreen('list-screen');
-    renderVideoList();
+    loadVideos();
   }
 }
 
 // ===== STORAGE =====
 function loadState() {
   try {
-    const saved = localStorage.getItem('eitan_state');
-    if (saved) state = JSON.parse(saved);
+    const saved = localStorage.getItem('eitan_v2');
+    if (saved) {
+      const parsed = JSON.parse(saved);
+      state = { ...state, ...parsed };
+    }
   } catch(e) {}
 }
 
 function saveState() {
-  localStorage.setItem('eitan_state', JSON.stringify(state));
+  localStorage.setItem('eitan_v2', JSON.stringify(state));
 }
 
 // ===== SCREENS =====
@@ -838,37 +388,77 @@ function showScreen(id) {
   document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
   document.getElementById(id).classList.add('active');
   if (id === 'settings-screen') renderSettingsForm();
-  if (id === 'list-screen') renderVideoList();
 }
 
 // ===== SETUP =====
 function saveSetup() {
-  const fid = document.getElementById('setup-folder-id').value.trim();
-  if (!fid) { showToast('フォルダIDを入力してください'); return; }
-  state.folderId = fid;
+  const apiKey = document.getElementById('setup-api-key').value.trim();
+  const folderId = document.getElementById('setup-folder-id').value.trim();
+  if (!apiKey) { showToast('APIキーを入力してください'); return; }
+  if (!folderId) { showToast('フォルダIDを入力してください'); return; }
+  state.apiKey = apiKey;
+  state.folderId = folderId;
   saveState();
   showScreen('list-screen');
-  renderVideoList();
+  loadVideos();
 }
 
-// ===== VIDEO LIST =====
+// ===== LOAD VIDEOS FROM GOOGLE DRIVE =====
+async function loadVideos() {
+  const container = document.getElementById('video-list-container');
+  container.innerHTML = `
+    <div class="loading-state">
+      <div class="loading-spinner"></div>
+      <p>動画を読み込んでいます...</p>
+    </div>`;
+
+  try {
+    const url = `https://www.googleapis.com/drive/v3/files?q='${state.folderId}'+in+parents+and+mimeType+contains+'video/'+and+trashed=false&fields=files(id,name,createdTime)&orderBy=name&key=${state.apiKey}`;
+    const res = await fetch(url, {
+      headers: { 'Referer': 'https://eitan-video.onrender.com' }
+    });
+    const data = await res.json();
+
+    if (data.error) {
+      throw new Error(data.error.message);
+    }
+
+    state.cachedVideos = data.files || [];
+    state.lastUpdated = new Date().toLocaleTimeString('ja-JP', {hour:'2-digit', minute:'2-digit'});
+    saveState();
+    renderVideoList();
+    document.getElementById('last-updated').textContent = `最終更新: ${state.lastUpdated}`;
+
+  } catch(e) {
+    container.innerHTML = `
+      <div class="error-state">
+        ⚠️ 動画の読み込みに失敗しました<br>
+        <small style="display:block;margin-top:0.5rem;opacity:0.8">${escHtml(e.message)}</small><br>
+        <small>APIキーとフォルダIDを確認してください</small>
+      </div>`;
+    document.getElementById('last-updated').textContent = '読み込み失敗';
+  }
+}
+
+// ===== RENDER VIDEO LIST =====
 function renderVideoList() {
   const container = document.getElementById('video-list-container');
-  if (state.videos.length === 0) {
+  if (state.cachedVideos.length === 0) {
     container.innerHTML = `
       <div class="empty-state">
         <span class="empty-icon">🎥</span>
-        <p>動画がまだ登録されていません。<br>⚙️ 設定から動画を追加してください。</p>
+        <p>フォルダに動画がありません。<br>Googleドライブに動画をアップロードしてください。</p>
       </div>`;
     return;
   }
-  container.innerHTML = state.videos.map(v => {
+  container.innerHTML = state.cachedVideos.map(v => {
     const bms = (state.bookmarks[v.id] || []).length;
+    const name = v.name.replace(/\.[^.]+$/, ''); // 拡張子を除去
     return `
-      <div class="video-card" onclick="openVideo('${v.id}')">
+      <div class="video-card" onclick="openVideo('${escHtml(v.id)}','${escHtml(name)}')">
         <div class="video-thumb">🎬</div>
         <div class="video-info">
-          <div class="video-title">${escHtml(v.title)}</div>
+          <div class="video-title">${escHtml(name)}</div>
           <div class="video-meta">
             ${bms > 0 ? `<span class="bookmark-badge">🔖 ${bms}件</span>` : '<span>しおりなし</span>'}
           </div>
@@ -879,17 +469,11 @@ function renderVideoList() {
 }
 
 // ===== PLAYER =====
-function openVideo(videoId) {
-  const video = state.videos.find(v => v.id === videoId);
-  if (!video) return;
-  currentVideoId = videoId;
-
-  document.getElementById('player-title').textContent = video.title;
-
-  // Google Drive 埋め込みURL
-  const embedUrl = `https://drive.google.com/file/d/${video.driveFileId}/preview`;
+function openVideo(fileId, title) {
+  currentVideoId = fileId;
+  document.getElementById('player-title').textContent = title;
+  const embedUrl = `https://drive.google.com/file/d/${fileId}/preview`;
   document.getElementById('video-iframe').src = embedUrl;
-
   showScreen('player-screen');
   renderBookmarks();
 }
@@ -898,6 +482,7 @@ function backToList() {
   document.getElementById('video-iframe').src = '';
   currentVideoId = null;
   showScreen('list-screen');
+  renderVideoList();
 }
 
 // ===== BOOKMARKS =====
@@ -912,9 +497,8 @@ function renderBookmarks() {
     <div class="bookmark-item">
       <span class="bookmark-time">${escHtml(b.addedAt)}</span>
       <span class="bookmark-label">${escHtml(b.label)}</span>
-      <button class="btn-del-bookmark" onclick="deleteBookmark('${b.id}')" title="削除">✕</button>
-    </div>
-  `).join('');
+      <button class="btn-del-bookmark" onclick="deleteBookmark('${b.id}')">✕</button>
+    </div>`).join('');
 }
 
 function openBookmarkModal() {
@@ -931,15 +515,9 @@ function addBookmark() {
   const label = document.getElementById('bookmark-label-input').value.trim();
   if (!label) { showToast('メモを入力してください'); return; }
   if (!state.bookmarks[currentVideoId]) state.bookmarks[currentVideoId] = [];
-
   const now = new Date();
   const addedAt = `${now.getMonth()+1}/${now.getDate()} ${String(now.getHours()).padStart(2,'0')}:${String(now.getMinutes()).padStart(2,'0')}`;
-
-  state.bookmarks[currentVideoId].push({
-    id: Date.now().toString(),
-    label,
-    addedAt,
-  });
+  state.bookmarks[currentVideoId].push({ id: Date.now().toString(), label, addedAt });
   saveState();
   closeBookmarkModal();
   renderBookmarks();
@@ -956,52 +534,19 @@ function deleteBookmark(bmId) {
 
 // ===== SETTINGS =====
 function renderSettingsForm() {
-  document.getElementById('folder-id-input').value = state.folderId || '';
-  const list = document.getElementById('video-edit-list');
-  if (state.videos.length === 0) {
-    list.innerHTML = '';
-    return;
-  }
-  list.innerHTML = state.videos.map((v, i) => `
-    <div class="video-edit-item" id="vedit-${v.id}">
-      <div class="video-num">動画 ${i + 1}</div>
-      <div class="video-edit-row">
-        <input type="text" placeholder="タイトル（例：Unit 1）" value="${escHtml(v.title)}"
-          oninput="updateVideoField('${v.id}','title',this.value)">
-        <button class="btn-del-video" onclick="removeVideo('${v.id}')" title="削除">✕</button>
-      </div>
-      <div class="video-edit-row">
-        <input type="text" placeholder="GoogleドライブのファイルID" value="${escHtml(v.driveFileId)}"
-          oninput="updateVideoField('${v.id}','driveFileId',this.value)">
-      </div>
-    </div>
-  `).join('');
-}
-
-function addVideoField() {
-  const newVideo = { id: Date.now().toString(), title: '', driveFileId: '' };
-  state.videos.push(newVideo);
-  renderSettingsForm();
-}
-
-function updateVideoField(id, field, value) {
-  const v = state.videos.find(v => v.id === id);
-  if (v) v[field] = value;
-}
-
-function removeVideo(id) {
-  state.videos = state.videos.filter(v => v.id !== id);
-  delete state.bookmarks[id];
-  renderSettingsForm();
+  document.getElementById('settings-api-key').value = state.apiKey || '';
+  document.getElementById('settings-folder-id').value = state.folderId || '';
 }
 
 function saveSettings() {
-  state.folderId = document.getElementById('folder-id-input').value.trim();
-  // 空のエントリを除外
-  state.videos = state.videos.filter(v => v.title.trim() && v.driveFileId.trim());
+  const apiKey = document.getElementById('settings-api-key').value.trim();
+  const folderId = document.getElementById('settings-folder-id').value.trim();
+  if (!apiKey || !folderId) { showToast('APIキーとフォルダIDを入力してください'); return; }
+  state.apiKey = apiKey;
+  state.folderId = folderId;
   saveState();
   showToast('✅ 保存しました');
-  setTimeout(() => showScreen('list-screen'), 800);
+  setTimeout(() => { showScreen('list-screen'); loadVideos(); }, 800);
 }
 
 // ===== UTILS =====
@@ -1013,14 +558,9 @@ function showToast(msg) {
 }
 
 function escHtml(str) {
-  return String(str)
-    .replace(/&/g,'&amp;')
-    .replace(/</g,'&lt;')
-    .replace(/>/g,'&gt;')
-    .replace(/"/g,'&quot;');
+  return String(str).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
 }
 
-// ===== START =====
 init();
 </script>
 </body>
