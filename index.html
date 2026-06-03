@@ -155,7 +155,25 @@
   .btn-refresh:hover { background: rgba(79,195,247,0.1); }
 
   /* PLAYER */
-  #player-screen { background: #000; }
+  #player-screen { background: var(--bg); }
+
+  .open-video-section {
+    background: var(--surface); border-radius: var(--radius);
+    padding: 2rem 1.5rem; margin-bottom: 1rem;
+    text-align: center; border: 1px solid rgba(79,195,247,0.15);
+  }
+
+  .btn-open-video {
+    display: inline-block; background: var(--accent); color: #0f1923;
+    border-radius: var(--radius-sm); padding: 1rem 2rem;
+    font-size: 1.1rem; font-weight: 800; font-family: 'Nunito', sans-serif;
+    text-decoration: none; transition: all 0.2s; margin-bottom: 0.75rem;
+  }
+  .btn-open-video:hover { background: var(--accent2); transform: translateY(-1px); }
+
+  .open-hint {
+    font-size: 0.8rem; color: var(--text2); margin-top: 0.75rem; line-height: 1.6;
+  }
 
   .player-top {
     background: #0f1923; padding: 0.75rem 1rem;
@@ -285,16 +303,13 @@
     <span class="player-title" id="player-title">動画タイトル</span>
     <button class="btn-add-bookmark" onclick="openBookmarkModal()">＋ しおり</button>
   </div>
-  <div class="video-wrapper">
-    <iframe id="video-iframe"
-      allow="autoplay; fullscreen; encrypted-media; picture-in-picture"
-      allowfullscreen="true"
-      webkitallowfullscreen="true"
-      mozallowfullscreen="true"
-      style="width:100%;aspect-ratio:16/9;display:block;border:none;background:#000;">
-    </iframe>
-  </div>
-  <div class="player-body">
+  <div class="player-body" style="flex:1;padding:1rem;">
+    <div class="open-video-section">
+      <a id="video-open-link" href="#" target="_blank" class="btn-open-video">
+        ▶ 動画を開いて再生する
+      </a>
+      <p class="open-hint">タップするとGoogleドライブで動画が開きます</p>
+    </div>
     <div class="bookmark-section">
       <div class="section-header">
         <span class="section-title">🔖 しおり一覧</span>
@@ -477,14 +492,15 @@ function renderVideoList() {
 function openVideo(fileId, title) {
   currentVideoId = fileId;
   document.getElementById('player-title').textContent = title;
-  const embedUrl = `https://drive.google.com/file/d/${fileId}/preview`;
-  document.getElementById('video-iframe').src = embedUrl;
+  // Googleドライブの動画再生URLを設定
+  const videoUrl = `https://drive.google.com/file/d/${fileId}/view`;
+  document.getElementById('video-open-link').href = videoUrl;
   showScreen('player-screen');
   renderBookmarks();
 }
 
 function backToList() {
-  document.getElementById('video-iframe').src = '';
+  document.getElementById('video-open-link').href = '#';
   currentVideoId = null;
   showScreen('list-screen');
   renderVideoList();
